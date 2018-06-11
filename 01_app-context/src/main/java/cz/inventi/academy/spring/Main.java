@@ -12,6 +12,8 @@ public class Main {
 
         Hello obj = (Hello) context.getBean("hello");
         obj.sayHello();
-        ((FileSystemXmlApplicationContext) context).destroy();
+        obj = (Hello) context.getBean("hello");
+        obj.sayHello();
+        ((FileSystemXmlApplicationContext) context).registerShutdownHook();
     }
 }

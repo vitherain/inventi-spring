@@ -9,7 +9,7 @@ public class Config {
     //@Bean
     public Hello hello() {
         Hello hello = new Hello();
-        hello.setName("Karel");
+        //hello.setName("Karel");
         return hello;
     }
 }

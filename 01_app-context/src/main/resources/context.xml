@@ -6,7 +6,10 @@
 
     <context:component-scan base-package="cz.inventi.academy.spring" />
 
-    <bean id="hello" class="cz.inventi.academy.spring.Hello" destroy-method="goodbye">
+    <!--<bean id="hello" class="cz.inventi.academy.spring.Hello" destroy-method="goodbye">
         <property name="name" value="Vit" />
+    </bean>-->
+
+    <bean id="namesStore" class="cz.inventi.academy.spring.NamesStore" scope="prototype">
     </bean>
 </beans>
