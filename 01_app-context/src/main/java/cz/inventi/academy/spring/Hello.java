@@ -2,8 +2,13 @@ package cz.inventi.academy.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.stereotype.Component;
 
-public class Hello {
+import javax.annotation.PreDestroy;
+
+//@Component
+public class Hello implements DisposableBean {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Hello.class);
 
@@ -17,7 +22,12 @@ public class Hello {
         LOGGER.info("Hello " + this.name);
     }
 
-    public void destroy() {
-        LOGGER.info("Goodbye!");
+    @Override
+    public void destroy() throws Exception {
+        LOGGER.info("I am going to be destroyed");
+    }
+
+    public void goodbye() throws Exception {
+        LOGGER.info("Goodbye");
     }
 }

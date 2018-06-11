@@ -1,6 +1,7 @@
 package cz.inventi.academy.spring;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Main {
@@ -11,5 +12,6 @@ public class Main {
 
         Hello obj = (Hello) context.getBean("hello");
         obj.sayHello();
+        ((FileSystemXmlApplicationContext) context).destroy();
     }
 }
